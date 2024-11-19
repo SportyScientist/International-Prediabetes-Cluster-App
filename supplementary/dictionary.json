@@ -1,14 +1,10 @@
 {
   "ENG": {
-    "Relation": "1st degree relative with type 2 diabetics?",
-    "Gestational": "History of Gestational diabetes?",
-    "Weight": "Weight (kg):",
     "Sex": "Sex:",
-    "Hip": "Hip Circumference (cm):",
+    "Age": "Age",
     "Waist": "Waist Circumference (cm):",
-    "Height": "Height (cm):",
-    "INS_0": "Fasting Insulin:", 
     "BZ_0": "Fasting Glucose:",
+    "BZ_60": "Glucose 60min (OGTT):",
     "BZ_120": "Glucose 120min (OGTT):",
     "TG": "Triglycerides:", 
     "Error_values": "Please enter all values first.",
@@ -20,20 +16,22 @@
     "yaxis": "Frequency", 
     "plottitle": "Distribution of Clusters", 
     "downloadtext": "Download Results", 
-    "Error_extension" : "No valid file type"
+    "Error_extension" : "No valid file type", 
+    "tab1": "Berechnung",
+    "batch": "Für Forschende",
+    "about": "Über",
+    "faq": "FAQ",
+    "impressum": "Impressum"
 
 
   },
   "GER": {
-    "Relation": "Verwandschaft 1. Grades mit Typ 2 DiabetikerIn?",
-    "Gestational": "Hatten Sie jemals Schwangerschaftsdiabetes?",
     "Weight": "Gewicht (kg):",
+    "Age": "Alter",
     "Sex": "Geschlecht:",
-    "Hip": "Hüftumfang (cm):",
     "Waist": "Tailienumfang (cm):",
-    "Height": "Größe (cm):",
-    "INS_0": "Insulin Nüchtern:", 
     "BZ_0": "Blutzucker Nüchtern:",
+    "BZ_60": "Blutzucker 60min (OGTT):",
     "BZ_120": "Blutzucker 120min (OGTT):",
     "TG": "Triglyceride:", 
     "Error_values": "Sie haben nicht alle Werte eingegeben!",
@@ -45,7 +43,12 @@
     "yaxis": "Häufigkeit",
     "plottitle": "Clusterverteilung",
     "downloadtext": "Ergebnis Herunterladen", 
-    "Error_extension" : "Kein zugelassenes Dateiformat"
+    "Error_extension" : "Kein zugelassenes Dateiformat", 
+    "tab1": "Calculation",
+    "batch": "For Researchers",
+    "about": "About",
+    "faq": "FAQ",
+    "impressum": "Legal Notice"
 
   }
 }
