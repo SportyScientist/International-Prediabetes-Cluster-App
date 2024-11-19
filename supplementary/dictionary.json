@@ -1,0 +1,51 @@
+{
+  "ENG": {
+    "Relation": "1st degree relative with type 2 diabetics?",
+    "Gestational": "History of Gestational diabetes?",
+    "Weight": "Weight (kg):",
+    "Sex": "Sex:",
+    "Hip": "Hip Circumference (cm):",
+    "Waist": "Waist Circumference (cm):",
+    "Height": "Height (cm):",
+    "INS_0": "Fasting Insulin:", 
+    "BZ_0": "Fasting Glucose:",
+    "BZ_120": "Glucose 120min (OGTT):",
+    "TG": "Triglycerides:", 
+    "Error_values": "Please enter all values first.",
+    "Error_file": "Please upload a file first.", 
+    "Yes": "Yes", 
+    "No": "No", 
+    "Male": "Male", 
+    "Female": "Female",
+    "yaxis": "Frequency", 
+    "plottitle": "Distribution of Clusters", 
+    "downloadtext": "Download Results", 
+    "Error_extension" : "No valid file type"
+
+
+  },
+  "GER": {
+    "Relation": "Verwandschaft 1. Grades mit Typ 2 DiabetikerIn?",
+    "Gestational": "Hatten Sie jemals Schwangerschaftsdiabetes?",
+    "Weight": "Gewicht (kg):",
+    "Sex": "Geschlecht:",
+    "Hip": "Hüftumfang (cm):",
+    "Waist": "Tailienumfang (cm):",
+    "Height": "Größe (cm):",
+    "INS_0": "Insulin Nüchtern:", 
+    "BZ_0": "Blutzucker Nüchtern:",
+    "BZ_120": "Blutzucker 120min (OGTT):",
+    "TG": "Triglyceride:", 
+    "Error_values": "Sie haben nicht alle Werte eingegeben!",
+    "Error_file": "Bitte laden Sie zuerst eine Datei hoch.", 
+    "Yes": "Ja", 
+    "No": "Nein", 
+    "Male": "Männlich", 
+    "Female": "Weiblich",
+    "yaxis": "Häufigkeit",
+    "plottitle": "Clusterverteilung",
+    "downloadtext": "Ergebnis Herunterladen", 
+    "Error_extension" : "Kein zugelassenes Dateiformat"
+
+  }
+}
