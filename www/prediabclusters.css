@@ -1,52 +1,35 @@
-a {color: black;}
+/* For the links to be changed to black */
+a {color: black;} 
 
-.nav{
-  height:6em;
-}
-
-.navbar-header {
-  /* set flex property to allow horizontal and vertical aligning of child divs */
+.navbar-nav {
   display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
-  text-align: top;
-  justify-content: top;
-}
-
-.navbar-logo {
-  margin: 0;
-  padding: 0;
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
-}
-
-.navbar-nav{
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
   justify-content: center;
-  margin-right:50px;
+  width: 100%;
 }
 
-.nav-link{
-  color: #000000;
+.navbar {
+  justify-content: center;
 }
 
+/* center all tabs */
+ul#tabs {
+  align-items: center;
+}
+
+
+/* active navbar item remains white */
 .navbar-nav .nav-link.active, .navbar-nav :where(ul.nav.navbar-nav > li) > a.active{
   color: #efefef;
 }
 
+
+/*active navbar item gets coloured underline  */
 .nav-underline .nav-link.active, .nav-underline :where(ul.nav.navbar-nav > li) > a.active{
   border-bottom-color: #349e8e;
 }
 
-.navbar .nav-underline .nav-link, .navbar .nav-underline :where(ul.nav.navbar-nav > li) > a{
-  padding-bottom: calc(var(--bs-navbar-padding-y, .5rem) * 1.4);
-}
 
+/* make the navbar thing THICk */
 .nav-underline .nav-link, .nav-underline :where(ul.nav.navbar-nav > li) > a{
   font-size: 1em;
   border-bottom: 3px solid transparent;
@@ -54,78 +37,20 @@ a {color: black;}
   margin:0;
 }
 
-.navbar-default:hover .navbar-nav > li > a:hover {
-  color: #000000;
-  border-bottom-color: #000000;
-  border-bottom: 2px solid;
-}
-
-.navbar-default:hover .navbar-nav > li > a.active:hover {
-  color: #efefef;
-  border-bottom-color: #349e8e !important;
-  border-bottom: 3px solid;
-}
-
-.bslib-nav-item.nav-item.form-inline{ 
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
-  /* center the language selector (compensate some anoying space on the bottom, still did not figured out where does it come from) */
-  padding-top:0.9em;
-}
-
+/* reduce space around spacer line in input fields */
 .spacer-line {
   border-top: 1px solid #000;
   margin: 0;
   padding: 0;
 }
 
-.navbar:not(.fixed-bottom):not(.navbar-fixed-bottom):not(.navbar-fixed-bottom) + div > .tab-content > .tab-pane {
-  margin: 15px 15px 20px 15px;
-}
-
-
-
-
-
-
-
-
-
-
-.markdown-separator {
-  border: 4px solid #349e8e;
-  margin-bottom: 5px;
-  margin-top: 0px;
-  margin-left: 5px;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.grid-card {
-  border-right: none;
-  border-left: 3px solid #5b5a5a;
-  border-top: 3px solid #5b5a5a;
-  border-bottom: none;
-  border-radius: 10px 0 0 0;
-  margin-left: 5px;
-}
+/* remove padding  */
 
 .grid-card-empty {
   border: none;
   padding: 0;
   margin: 0;
   box-shadow: none;
-}
-
-.grid_card_download {
-  border: none;
-  padding: 0;
-  margin: 0;
 }
 
 .grid-card-left {
@@ -137,6 +62,7 @@ a {color: black;}
   box-shadow: none;
   
 }
+
 
 .grid-card-right {
   border-left: none;
@@ -152,34 +78,17 @@ a {color: black;}
   margin-top: 5px
 }
 
-.grid-card-button2 {
-  border: none;
-  margin: 0px
-}
 
-.batch-upload_grid > div:nth-child(2){
-  width: 950px;
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
-}
-
-#batch-upload_div {
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: center;
-  /* for horizontal aligning of child divs */
-  justify-content: center;
-  /* set relative position to allow in progress bar div to be located at the bottom of this div */
-  position: relative;
-}
-
-.batch-upload_typeselector{
-  display: inline;
-  width: 100px;
-  border:none;
-  padding-top:12px;
-  text-align:right;
+.markdown-separator {
+  border: 4px solid;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  margin-left: 5px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .grid-card-result {
@@ -193,6 +102,14 @@ a {color: black;}
   box-shadow: 0 2px 2px -2px #5b5a5a;
 }
 
+.grid-card-result p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
 .grid-card-donutplot {
   border-right: none;
   border-left: 3px solid #5b5a5a;
@@ -202,14 +119,6 @@ a {color: black;}
   margin-left: 5px;
   position: relative;
   box-shadow: 0 2px 2px -2px #5b5a5a;
-}
-
-.grid-card-result p {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
 }
 
 .grid-card-clusterinfo {
@@ -227,130 +136,12 @@ a {color: black;}
 }
 
 
-.grid-card-empty {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.about-image {
-  margin-top:30px;
-  display: block;
-  max-width:900px;
-  max-height:565px;
-  width: auto;
-  height: auto;
-}
-
-.about-text {
-  padding-top:25px;
-}
-
-.html-fill-container > :not(.html-fill-item) {
-  flex: auto;
-}
-
-div.grid-container:nth-child(4) {
-  grid-template-rows: auto;
-}
-
-#batch_upload_1 > hr:nth-child(1){
-  margin: 0.8rem 0 1.5rem 1rem;
-  color: #349e8e;
-  border-top: 4px solid;
-  width: 5%;
-  opacity: 1;
-
-}
-
-div.grid-card-empty:nth-child(3){
-  margin-top:30px;
-}
-
-#batch_upload_2 > hr:nth-child(1){
-  margin: 0.8rem 0 1.5rem 1rem;
-  color: #5b5a5a;
-  border-top: 4px solid;
-  width: 10%;
-  opacity: 0.5;
-}
-
-div.grid-card-empty:nth-child(5){
-  margin-top:30px;
-}
-
-#batch_upload_3 > hr:nth-child(1){
-  margin: 0.8rem 0 1.5rem 1rem;
-  color: #5b5a5a;
-  border-top: 4px solid;
-  width: 15%;
-  opacity: 1;
-}
-
-
-
-
-
-
-
-
-
+/* Batch upload Tab */
 
 input.form-control {
   margin:0;
 }
 
-#downloadbutton {
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
-  /* for horizontal aligning of child divs */
-  justify-content: center;
-  height:53px;
-  font-size: 0.9em;
-  border: solid 3px;
-  border-color: #349e8e;
-}
-
-#downloadbutton:hover {
-  color:#000000;
-}
-
-#downloadbutton.btn.btn-default.shiny-download-link.shiny-bound-output.disabled{
-  color:#a3a3a3;
-  background: repeating-linear-gradient(
-  45deg,
-  #e8e8e8,
-  #e8e8e8 3px,
-  #ffffff 3px,
-  #ffffff 6px);
-}
-
-.btn {
-  padding: .35rem .375rem;
-  border-radius: .375rem;
-  vertical-align: middle;
-}
-.form-control {
-  padding: .35rem .375rem;
-}
-
-.btn-default {
-  border: none;
-  background-color: #5b5a5a;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.1em;
-  vertical-align: middle;
-}
-
-.btn-default:hover {
-  border: none;
-  background-color: #349e8e;
-  color: #efefef;
-}
-
-/*this is the button with "Browse" inside */
 .batch-upload_download-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file{
   background-color: #5b5a5a;
   color: #ffffff;
@@ -362,79 +153,8 @@ input.form-control {
 
 /*this is the button with "Browse" inside when hovered upon */
 .batch-upload_download-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file:hover{
-  background-color: #349e8e;
   color: #000000;
   border-width: 2px;
   border-style: solid;
-  border-color: #349e8e;
   font-size: 0.9em;
 }
-
-/*the "no file selected" field */
-
-.batch-upload_download-button .input-group input.form-control{
-  border-color: #349e8e;
-  border-style: solid solid solid none;
-  border-width:2px;
-  font-size: 0.9em;
-}
-
-.btn-download{
-float:right;
-}
-
-.batch-upload_download-button button#dummybutton.btn.btn-default.action-button.shiny-bound-input{
-  /*height: 2.3em;*/
-  font-size: 0.9em;
-}
-
-.batch-upload_example-button a#download_example{
-  background-color: RGBA(91,90,90, 0.5);
-  color: #ffffff;
-}
-
-.batch-upload_example-button a#download_example:hover{
-  background-color: #349e8e;
-  color: #000000;
-  opacity: 0.75;
-}
-
-.btn-language-selector {
-padding: 6px 10px;
-margin: 0;
-color: #000000;
-box-sizing: border-box;
-cursor: pointer;
-display: block;
-flex-basis: auto;
-flex-grow: 1;
-flex-shrink: 1;
-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-font-size: 15px;
-font-weight: 500;
-line-height: 22.5px;
-overflow-wrap: break-word;
-text-align: center;
-transition-delay: 0s, 0s, 0s, 0s;
-transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
-transition-property: color, background-color, border-color, box-shadow;
-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
-vertical-align: middle;
-z-index: 1;
-border-radius: 3px;
-border-width: 1px;
-background: transparent;
-border-color: #349E8E;
-}
-
-.btn-check:checked + .btn-language-selector { /*button active */
-color: #efefef !important;
-border-color: #349E8E !important;
-background: #349E8E !important;
-}
-
-.btn-language-selector:hover { /*button mouse hover */
-color: #349E8E !important;
-border-color: #349E8E !important;
-}
-

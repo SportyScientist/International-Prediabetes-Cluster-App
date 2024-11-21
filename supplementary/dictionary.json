@@ -17,11 +17,17 @@
     "plottitle": "Distribution of Clusters", 
     "downloadtext": "Download Results", 
     "Error_extension" : "No valid file type", 
-    "tab1": "Berechnung",
-    "batch": "Für Forschende",
-    "about": "Über",
+    "tab1": "Calculation",
+    "batch": "For Researchers",
+    "about": "About",
     "faq": "FAQ",
-    "impressum": "Impressum"
+    "impressum": "Impressum", 
+    "missing_sin": "Not all variables are present! ", 
+    "missing_plu": "Not all variables are present! ", 
+    "missing_sin_end": " is missing.", 
+    "missing_plu_end": " are missing."
+
+
 
 
   },
@@ -44,11 +50,15 @@
     "plottitle": "Clusterverteilung",
     "downloadtext": "Ergebnis Herunterladen", 
     "Error_extension" : "Kein zugelassenes Dateiformat", 
-    "tab1": "Calculation",
-    "batch": "For Researchers",
-    "about": "About",
+    "tab1": "Berechnung",
+    "batch": "Für Forschende",
+    "about": "Über",
     "faq": "FAQ",
-    "impressum": "Legal Notice"
+    "impressum": "Legal Notice", 
+    "missing_sin": "Nicht alle Variablen vorhanden! Es fehlt ", 
+    "missing_plu": "Nicht alle Variablen vorhanden! Es fehlen ", 
+        "missing_sin_end": ".", 
+    "missing_plu_end": "."
 
   }
 }
