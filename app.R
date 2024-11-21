@@ -13,7 +13,6 @@ library(glmnet)
 library(shinyalert)
 
 
-
 text <- fromJSON("supplementary/markdowns.json")
 dictionary <- fromJSON("supplementary/dictionary.json")
 model <- readRDS("lasso_model.rds")
@@ -24,7 +23,7 @@ variables <- row.names((coef(model)[[1]]))[2:length(row.names((coef(model)[[1]])
 ui <- fluidPage(
   uiOutput("navbar_ui"),
   tags$link(href = "prediabclusters.css", rel = "stylesheet", type = "text/css"),
-  theme = bs_theme(preset = "flatly", font_scale = 1.4)
+  theme = bs_theme(preset = "flatly", font_scale = 1.1)
 )
 
 server <- function(input, output, session) {
@@ -66,7 +65,9 @@ server <- function(input, output, session) {
                 |220px |sidebar_1 |sidebar_2 |warning_text |warning_text   |
                 |160px |sidebar_1 |sidebar_2 |donutplot    |result_text    |
                 |auto  |sidebar_1 |sidebar_2 |cluster_info |cluster_info   |
+                |auto  |switch    |switch    |cluster_info |cluster_info   |
                 |auto  |button    |button    |cluster_info |cluster_info   |
+
                 ",
           grid_card(
             area = "sidebar_1",
@@ -133,12 +134,15 @@ server <- function(input, output, session) {
           ),
           grid_card(
             class = "grid-card-button",
-            area = "button",
+            area = "button", card_body(padding = "0px",actionButton("calculate", "Berechnen", height = "100%", class = "grid-card-button-div"))
+
+          ),
+             grid_card(
+            class = "grid-card-switch",
+            area = "switch",
                         card_body(padding = "0px", radioGroupButtons(inputId = "ethnicity", label = NULL, choices = c("Central European", 
     "    Asian Indian    "),
-   justified = TRUE, disabled = TRUE)),
-               card_body(padding = "0px", actionButton("calculate", "Berechnen", height = "100%"))
-
+   justified = TRUE, disabled = FALSE, status = "yelp"))
           ),
           grid_card(
             area = "warning_text",
@@ -162,14 +166,17 @@ server <- function(input, output, session) {
           )
         )
       ),
+      # batch upload panel
       nav_panel(
         title = dictionary[[current_lang()]]$batch,
         value = "batch",
         class = "batch-upload_grid",
+        # text
         grid_card(area = "batch_upload_1", class = "grid-card-empty", card_body(uiOutput(outputId = "batch_upload_1"))),
+        # upload field
         grid_nested(
           id = "batch-upload_div",
-          "batch_upload",
+          "batch_upload", # this is probably the area name
           layout = "
                 |0rem  |   500px  |  300px   |100px |
                 |------|----------|----------|----------|

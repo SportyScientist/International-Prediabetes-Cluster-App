@@ -37,12 +37,68 @@ ul#tabs {
   margin:0;
 }
 
+/* this removes the margin of the dropdown to center it */
+
+#tabs li.bslib-nav-item.nav-item.form-inline > .form-group.shiny-input-container {
+  margin-bottom: 0 !important;
+}
+
+.selectize-input.items.full.has-options.has-items {
+  color: white !important;
+  background-color: #2c3e50 !important;
+}
+
+body > .container-fluid {
+  padding: 0 !important;
+}
+
 /* reduce space around spacer line in input fields */
 .spacer-line {
   border-top: 1px solid #000;
   margin: 0;
   padding: 0;
 }
+
+.batch-upload_grid > div:nth-child(2){
+  width: 950px;
+  /* set flex property to allow horizontal and vertical aligning of child divs */
+  display: flex;
+  /* for vertical aligning of child divs */
+  align-items: center;
+}
+
+#batch-upload_div {
+  /* set flex property to allow horizontal and vertical aligning of child divs */
+  /* display: center; */
+  /* for horizontal aligning of child divs */
+  /* justify-content: center; */
+  /* set relative position to allow in progress bar div to be located at the bottom of this div */
+  /* position: relative; */
+  padding: 0px; 
+
+}
+
+.card-body.bslib-gap-spacing.html-fill-item.html-fill-container.batch-upload_download-button{
+  padding: 0 px;
+}
+
+.div.card.bslib-card.bslib-mb-spacing.html-fill-item.html-fill-container {
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1.2px;
+  box-shadow: 
+    rgba(29, 31, 33, 0.14) 0px 0px 2px 0px, 
+    rgba(29, 31, 33, 0.16) 0px 2px 4px 0px;
+}
+
+.batch-upload_typeselector{
+  display: inline;
+  width: 100px;
+  border:none;
+  padding-top:12px;
+  text-align:right;
+}
+
+
 
 /* remove padding  */
 
@@ -52,6 +108,7 @@ ul#tabs {
   margin: 0;
   box-shadow: none;
 }
+
 
 .grid-card-left {
   border-right: none;
@@ -74,8 +131,32 @@ ul#tabs {
 }
 
 .grid-card-button {
+  padding: 0px !important;
   border: none;
-  margin-top: 5px
+  margin-top: 5px !important; 
+  margin-bottom: 0px !important;
+  margin-left: 0px !important; 
+  margin-right: 0px !important;   
+}
+
+.grid-card-button-div {
+  background-color: #2c3e50;
+  color: #ffffff
+}
+
+.grid-card-button-div:hover {
+  background-color: 	#7b8a8b;
+  color: #000000;
+  opacity: 0.75;
+}
+
+.grid-card-switch {
+  padding: 0px !important;
+  border: none;
+  margin-top: 5px !important; 
+  margin-bottom: 0px !important;
+  margin-left: 0px !important; 
+  margin-right: 0px !important;   
 }
 
 
@@ -110,6 +191,10 @@ ul#tabs {
   transform: translate(-50%, -50%);
 }
 
+.btn-download{
+  float:right;
+  }
+  
 .grid-card-donutplot {
   border-right: none;
   border-left: 3px solid #5b5a5a;
@@ -143,18 +228,80 @@ input.form-control {
 }
 
 .batch-upload_download-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file{
-  background-color: #5b5a5a;
+  background-color: #2c3e50;
   color: #ffffff;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #5b5a5a;
-  font-size: 0.9em;
+  /* border-color: #2c3e50; */
+  /* font-size: 0.9em; */
 }
 
 /*this is the button with "Browse" inside when hovered upon */
 .batch-upload_download-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file:hover{
+  background-color: 	#7b8a8b;
   color: #000000;
-  border-width: 2px;
-  border-style: solid;
-  font-size: 0.9em;
+  opacity: 0.75;
+  /* font-size: 0.9em; */
 }
+
+/* button to be separated into 2 equal parts */
+
+.btn-group, .btn-group-vertical {
+    column-count: 2;
+  }
+  
+  .btn-group-toggle {
+  width:200px;
+  }
+
+  .radiobtn { 
+    width:200px;
+  }
+
+
+  /* This us the spacer lines on the batch upload page */
+  #batch_upload_1 > hr:nth-child(1){
+    margin: 0.8rem 0 1.5rem 1rem;
+    color: #2c3e50;
+    border-top: 4px solid;
+    width: 5%;
+    opacity: 1;
+  
+  }
+  
+  #batch_upload_2 > hr:nth-child(1){
+    margin: 0.8rem 0 1.5rem 1rem;
+    color: #7b8a8b;
+    border-top: 4px solid;
+    width: 10%;
+    opacity: 0.5;
+  }
+  
+  
+#batch_upload_3 > hr:nth-child(1){
+  margin: 0.8rem 0 1.5rem 1rem;
+  color: #7b8a8b;
+  border-top: 4px solid;
+  width: 15%;
+  opacity: 1;
+}
+
+
+/* example buttons */
+
+.batch-upload_example-button a#download_example{
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.batch-upload_example-button a#download_example:hover{
+  background-color: 	#7b8a8b;
+  color: #000000;
+  opacity: 0.75;
+}
+
+/* div around the example button */
+.grid-card-button2 {
+  border: none;
+  margin: 0px
+}
+
+
