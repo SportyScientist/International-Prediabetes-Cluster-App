@@ -442,7 +442,13 @@ server <- function(input, output, session) {
 
     ###
     # data_raw <- test
-
+    data_raw <- read.csv("../06_clustering_chennai_new/analysis/data_clustered.csv") %>% 
+        select("id", "AGE", "SEX", "BZN0_MG", "BZ60_MG", "BZ120_MG", "WAIST", "HDL", "LDL", "TG", "HBA1C") %>% mutate(SEX = ifelse(SEX == "Male", 1, 0)) %>% 
+        mutate(BG_0 = BZN0_MG / 18)%>%
+        mutate(BG_60 = BZ60_MG / 18)%>%
+        mutate(BG_120 = BZ120_MG / 18) %>% select(-c("BZN0_MG", "BZ60_MG", "BZ120_MG"), "PATNO" = "id") %>% 
+        mutate(index = dplyr::row_number())
+    
     data <- data_raw %>%
       dplyr::select("AGE", "SEX", "BG_0", "BG_60", "BG_120", "WAIST", "HDL", "LDL", "TG", "HBA1C", "index") %>%
       drop_na()
@@ -450,15 +456,16 @@ server <- function(input, output, session) {
 
     data_testing <- data %>%
       dplyr::select(-index) %>%
-      select("AGE", "WAIST", "TG", "HDL", "LDL", "BG_0", "BG_60", "BG_120", "HBA1C", "SEX")
-
+      select(variables)
 
     Cluster <- predict(model, s = 0.001011589, newx = as.matrix(data_testing), type = "class")
 
     data_int <- data.frame(Cluster, index)
     names(data_int) <- c("Cluster", "index")
+    
     data_return <- left_join(data_raw %>% select("PATNO", "AGE", "SEX", "BG_0", "BG_60", "BG_120", "WAIST", "HDL", "LDL", "TG", "HBA1C", "index"), data_int, by = "index") %>% dplyr::select(-"index")
-
+    #table(data_return$Cluster, read.csv("../06_clustering_chennai_new/analysis/data_clustered.csv")$cluster_names)
+    
     data_return[] <- lapply(data_return, function(x) if (is.numeric(x)) round(x, digits = 2) else x)
 
     data_return$Cluster[is.na(data_return$Cluster)] <- "Missing Values"
