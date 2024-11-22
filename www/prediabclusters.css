@@ -1,6 +1,13 @@
 /* For the links to be changed to black */
 a {color: black;} 
 
+
+/* remove padding from main container that's around everything */
+body > .container-fluid {
+  padding: 0 !important;
+}
+
+/* navbar settings */
 .navbar-nav {
   display: flex;
   justify-content: center;
@@ -29,7 +36,7 @@ ul#tabs {
 }
 
 
-/* make the navbar thing THICk */
+/* make the navbar thing THICK */
 .nav-underline .nav-link, .nav-underline :where(ul.nav.navbar-nav > li) > a{
   font-size: 1em;
   border-bottom: 3px solid transparent;
@@ -43,14 +50,13 @@ ul#tabs {
   margin-bottom: 0 !important;
 }
 
+/* colouring of language selections */
 .selectize-input.items.full.has-options.has-items {
   color: white !important;
   background-color: #2c3e50 !important;
 }
 
-body > .container-fluid {
-  padding: 0 !important;
-}
+
 
 /* reduce space around spacer line in input fields */
 .spacer-line {
@@ -59,53 +65,65 @@ body > .container-fluid {
   padding: 0;
 }
 
-.batch-upload_grid > div:nth-child(2){
-  width: 950px;
+
+/* batchupload page */
+
+/* this removes the border around the input box */
+.batch-upload-grid > div:nth-child(2){
+  border: none !important;
   /* set flex property to allow horizontal and vertical aligning of child divs */
-  display: flex;
-  /* for vertical aligning of child divs */
-  align-items: center;
-}
-
-#batch-upload_div {
-  /* set flex property to allow horizontal and vertical aligning of child divs */
-  /* display: center; */
-  /* for horizontal aligning of child divs */
-  /* justify-content: center; */
-  /* set relative position to allow in progress bar div to be located at the bottom of this div */
-  /* position: relative; */
-  padding: 0px; 
-
-}
-
-.card-body.bslib-gap-spacing.html-fill-item.html-fill-container.batch-upload_download-button{
-  padding: 0 px;
-}
-
-.div.card.bslib-card.bslib-mb-spacing.html-fill-item.html-fill-container {
-  border-color: rgba(0, 0, 0, 0);
-  border-width: 1.2px;
-  box-shadow: 
-    rgba(29, 31, 33, 0.14) 0px 0px 2px 0px, 
-    rgba(29, 31, 33, 0.16) 0px 2px 4px 0px;
-}
-
-.batch-upload_typeselector{
-  display: inline;
-  width: 100px;
-  border:none;
-  padding-top:12px;
-  text-align:right;
+  /* display: flex; */
 }
 
 
+#batch-upload-div{
+  width: 850px;
+  border: none !important;
+}
+
+.batch-upload-typeselector{
+  /* text-align:right; */
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none !important;
+}
+
+.batch-upload-btn-download{
+  padding: 0;
+  margin: 0;
+  border: none !important;
+}
+
+
+/* example buttons */
+
+.batch-upload_example-button a#download_example{
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.batch-upload_example-button a#download_example:hover{
+  background-color: 	#7b8a8b;
+  color: #000000;
+  opacity: 0.75;
+}
+
+/* div around the example button */
+.grid-card-button2 {
+  border: none;
+  margin: 0px
+}
+
+#input_container {
+  margin-left: 15px; /* Adjust the value as needed */
+}
 
 /* remove padding  */
 
 .grid-card-empty {
   border: none;
   padding: 0;
-  margin: 0;
   box-shadow: none;
 }
 
@@ -223,27 +241,40 @@ body > .container-fluid {
 
 /* Batch upload Tab */
 
-input.form-control {
-  margin:0;
-}
-
-.batch-upload_download-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file{
+.batch-upload-upload-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file{
   background-color: #2c3e50;
   color: #ffffff;
-  /* border-color: #2c3e50; */
-  /* font-size: 0.9em; */
 }
 
 /*this is the button with "Browse" inside when hovered upon */
-.batch-upload_download-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file:hover{
+.batch-upload-upload-button div.form-group.shiny-input-container div.input-group label.input-group-btn.input-group-prepend span.btn.btn-default.btn-file:hover{
   background-color: 	#7b8a8b;
   color: #000000;
   opacity: 0.75;
-  /* font-size: 0.9em; */
 }
 
-/* button to be separated into 2 equal parts */
+/* Download Button for results */
 
+#downloadbutton {
+  /* set flex property to allow horizontal and vertical aligning of child divs */
+  display: flex;
+  /* for vertical aligning of child divs */
+  align-items: center;
+  /* for horizontal aligning of child divs */
+  justify-content: center;
+  height:56px;
+  background-color: #2c3e50;
+}
+
+#downloadbutton:hover {
+  background-color: 	#7b8a8b;
+  color: #000000;
+  opacity: 0.75;}
+
+
+
+
+/* button to be separated into 2 equal parts */
 .btn-group, .btn-group-vertical {
     column-count: 2;
   }
@@ -259,7 +290,7 @@ input.form-control {
 
   /* This us the spacer lines on the batch upload page */
   #batch_upload_1 > hr:nth-child(1){
-    margin: 0.8rem 0 1.5rem 1rem;
+    margin: 0.8rem 0 1.5rem 0px;
     color: #2c3e50;
     border-top: 4px solid;
     width: 5%;
@@ -268,7 +299,7 @@ input.form-control {
   }
   
   #batch_upload_2 > hr:nth-child(1){
-    margin: 0.8rem 0 1.5rem 1rem;
+    margin: 0.8rem 0 1.5rem 0px;
     color: #7b8a8b;
     border-top: 4px solid;
     width: 10%;
@@ -277,31 +308,11 @@ input.form-control {
   
   
 #batch_upload_3 > hr:nth-child(1){
-  margin: 0.8rem 0 1.5rem 1rem;
+  margin: 0.8rem 0 1.5rem 0px;
   color: #7b8a8b;
   border-top: 4px solid;
   width: 15%;
   opacity: 1;
-}
-
-
-/* example buttons */
-
-.batch-upload_example-button a#download_example{
-  background-color: #2c3e50;
-  color: #ffffff;
-}
-
-.batch-upload_example-button a#download_example:hover{
-  background-color: 	#7b8a8b;
-  color: #000000;
-  opacity: 0.75;
-}
-
-/* div around the example button */
-.grid-card-button2 {
-  border: none;
-  margin: 0px
 }
 
 

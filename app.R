@@ -11,6 +11,7 @@ library(tidylog)
 library(khroma)
 library(glmnet)
 library(shinyalert)
+?grid_container
 
 
 text <- fromJSON("supplementary/markdowns.json")
@@ -59,11 +60,12 @@ server <- function(input, output, session) {
         value = "tab1",
         grid_card(area = "welcome", class = "grid-card-empty", card_body(uiOutput(outputId = "welcome_text"))),
         grid_container(
+          id = "input_container",
           layout = "
                 |0rem  |300px     |300px     |400px        |300px          |
                 |------|----------|----------|-------------|---------------|
-                |220px |sidebar_1 |sidebar_2 |warning_text |warning_text   |
-                |160px |sidebar_1 |sidebar_2 |donutplot    |result_text    |
+                |auto |sidebar_1 |sidebar_2 |warning_text |warning_text   |
+                |auto |sidebar_1 |sidebar_2 |donutplot    |result_text    |
                 |auto  |sidebar_1 |sidebar_2 |cluster_info |cluster_info   |
                 |auto  |switch    |switch    |cluster_info |cluster_info   |
                 |auto  |button    |button    |cluster_info |cluster_info   |
@@ -142,7 +144,7 @@ server <- function(input, output, session) {
             area = "switch",
                         card_body(padding = "0px", radioGroupButtons(inputId = "ethnicity", label = NULL, choices = c("Central European", 
     "    Asian Indian    "),
-   justified = TRUE, disabled = FALSE, status = "yelp"))
+   justified = TRUE, disabled = FALSE))
           ),
           grid_card(
             area = "warning_text",
@@ -170,34 +172,40 @@ server <- function(input, output, session) {
       nav_panel(
         title = dictionary[[current_lang()]]$batch,
         value = "batch",
-        class = "batch-upload_grid",
+        class = "batch-upload-grid",
         # text
         grid_card(area = "batch_upload_1", class = "grid-card-empty", card_body(uiOutput(outputId = "batch_upload_1"))),
         # upload field
         grid_nested(
-          id = "batch-upload_div",
+          id = "batch-upload-div",
           "batch_upload", # this is probably the area name
           layout = "
-                |0rem  |   500px  |  300px   |100px |
-                |------|----------|----------|----------|
-                | |output_field_1 |output_field_2 |toggle_filetype|
-                | |bardiagramm |bardiagramm |bardiagramm |
+                |0px  |       auto    |  300px        |100px          |
+                |-----|---------------|---------------|---------------|
+                |auto |output_field_1 |output_field_2 |toggle_filetype|
+                |auto |bardiagramm    |bardiagramm    |bardiagramm    |
           ",
           grid_card(
             area = "output_field_1",
             class = "grid-card-empty",
             card_body(
-              class = "batch-upload_download-button",
-              fileInput("file1", NULL, accept = c(".tsv", ".txt", ".csv", ".xlsx"), width = "400px", buttonLabel = "Browse...", placeholder = "No file selected")
+              class = "batch-upload-upload-button",
+              fileInput("file1",label= NULL, accept = c(".tsv", ".txt", ".csv", ".xlsx"), width = "400px", buttonLabel = "Browse...", placeholder = "No file selected")
             )
           ),
-          grid_card(area = "output_field_2", class = "grid-card-empty btn-download", card_body(uiOutput("downloadresults"))),
-          grid_card(area = "toggle_filetype", class = "batch-upload_typeselector", card_body(
+          grid_card(area = "output_field_2", class = "batch-upload-btn-download", card_body(uiOutput("downloadresults"))),
+
+          grid_card(area = "toggle_filetype", class = "batch-upload-typeselector", card_body(
             uiOutput("toggle")
           )),
           grid_card(area = "bardiagramm", class = "grid-card-empty", card_body(plotOutput(outputId = "bardiagramm", inline = TRUE)))
         ),
+        ### batch upload field ends here 
+        
         grid_card(area = "batch_upload_2", class = "grid-card-empty", card_body(uiOutput(outputId = "batch_upload_2"))),
+        ######
+        
+
         grid_container(
           row_sizes = c("50px"),
           col_sizes = c("350px"),
