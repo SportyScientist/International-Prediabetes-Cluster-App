@@ -4,3 +4,5 @@ rsconnect/
 legacy/
 T2DM-Cluster-webapp.zip
 danksagung.docx
+lasso_model.rds
+.Rhistory
